@@ -1,0 +1,27 @@
+services:
+  app:
+    build:
+      context: ./docker/php
+    container_name: booking_app
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8000:8000"
+    tty: true
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    container_name: booking_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: booking
+    ports:
+      - "3306:3306"
+    volumes:
+      - booking_mysql_data:/var/lib/mysql
+
+volumes:
+  booking_mysql_data:
