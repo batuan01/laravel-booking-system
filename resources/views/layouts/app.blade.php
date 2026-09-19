@@ -14,8 +14,26 @@
          thay vì load lại toàn trang -> chuyển trang mượt, không nháy trắng. -->
     <script src="https://cdn.jsdelivr.net/npm/turbolinks@5.2.0/dist/turbolinks.js"></script>
 
+    <!-- Fonts (hỗ trợ dấu tiếng Việt đầy đủ) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" data-turbolinks-track="reload">
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #4a5568;
+        }
+        .navbar-brand,
+        h1, h2, h3, h4, h5, h6,
+        .panel-heading {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-weight: 600;
+            color: #2d3748;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
