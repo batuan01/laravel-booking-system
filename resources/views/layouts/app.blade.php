@@ -10,8 +10,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Turbolinks: chặn click link/submit form, tự AJAX-fetch trang mới rồi thay <body>
+         thay vì load lại toàn trang -> chuyển trang mượt, không nháy trắng. -->
+    <script src="https://cdn.jsdelivr.net/npm/turbolinks@5.2.0/dist/turbolinks.js"></script>
+
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" data-turbolinks-track="reload">
 </head>
 <body>
     <div id="app">
@@ -75,6 +79,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}" data-turbolinks-track="reload"></script>
 </body>
 </html>
